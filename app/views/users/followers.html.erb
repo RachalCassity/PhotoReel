@@ -1,0 +1,39 @@
+<%= render partial: "menu" %>
+
+<div class="ui hidden divider"></div>
+
+<div class="ui container">
+  <div class="column">
+    <div class="ui horizontal segments">
+      <div class="ui segment">
+        <h2 class="ui header">Followers</h2>
+
+        <% if @user.followers.any? %>
+          <div class="ui list">
+            <% @user.followers.each do |follower| %>
+              <div class="item"><%= link_to follower.username, user_path(follower) %></div>
+            <% end %>
+          </div>
+        <% else %>
+          <p>No followers</p>
+        <% end %>
+      </div>
+
+      <div class="ui segment">
+        <h2 class="ui header">Following</h2>
+
+        <% if @user.following.any? %>
+          <div class="ui list">
+            <% @user.following.each do |following| %>
+              <div class="item"><%= link_to following.username, user_path(following) %></div>
+            <% end %>
+          </div>
+        <% else %>
+          <p>Not following any users</p>
+        <% end %>
+      </div>
+
+      <div class="ui hidden divider"></div>
+    </div>
+  </div>
+</div>

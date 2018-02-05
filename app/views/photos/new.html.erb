@@ -1,0 +1,36 @@
+<div class="ui middle aligned left aligned grid">
+  <div class="column">
+    <h2 class="ui center aligned header">New photo</h2>
+
+    <%= form_for @photo, html: { class: "ui form" } do |f| %>
+      <div class="ui stacked segment">
+        <%= render "shared/error_messages", target: @photo %>
+
+        <div class="field">
+          <%= f.label :image %>
+          <%= f.file_field :image %>
+        </div>
+
+        <% if f.object.image? %>
+          <div class="field">
+            <%= image_tag f.object.image.thumb.url %>
+          </div>
+
+          <div class="field">
+            <%= f.check_box :remove_image %>
+            <%= f.label :remove_image %>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= f.label :description, "Description" %>
+          <%= f.text_field :description %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Upload", class: "ui fluid large submit button" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

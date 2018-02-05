@@ -1,0 +1,22 @@
+<div class="ui middle aligned left aligned grid">
+  <div class="column">
+    <h2 class="ui center aligned header">Resend unlock instructions</h2>
+
+    <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { class: "ui form", method: :post }) do |f| %>
+      <div class="ui stacked segment">
+        <%= devise_error_messages! %>
+
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Resend unlock instructions", class: "ui fluid blue submit button" %>
+        </div>
+      </div>
+    <% end %>
+
+    <%= render "users/shared/links" %>
+  </div>
+</div>

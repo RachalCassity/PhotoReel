@@ -1,0 +1,57 @@
+.column-photos {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.container-photos {
+  max-width: 500px;
+  width: 500px;
+}
+.container-photo {
+  max-width: 500px;
+  width: 500px;
+  background-color: #ffffff;
+  border-top-left-radius: 1px !important;
+  border-top-right-radius: 1px !important;
+}
+.container-photo-header .attached.header {
+  border: 1px solid #dfdfdf !important;
+  border-bottom: none !important;
+  border-radius: 0 !important;
+}
+.container-photo-image img {
+  max-width: 500px;
+  max-height: 500px;
+  border: 1px solid #cfcfcf !important;
+}
+.container-photo-description {
+  padding: .5em 0 1em 0 !important;
+  border: 1px solid #dfdfdf !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-radius: 0 !important;
+  color: rgba(0, 0, 0, .75);
+}
+.container-photo-comments {
+  border: 1px solid #dfdfdf !important;
+  border-top: 1px solid #efefef !important;
+  border-radius: 0 !important;
+}
+
+.photo-timestamp {
+  float: right;
+  font-weight: normal;
+  color: rgba(0, 0, 0, .4);
+}
+
+.form-photo-comment label {
+  display: none !important;
+}
+.form-photo-comment input[type=text] {
+  border: none !important;
+  padding: 7px 7px 8px 7px !important;
+}
+.form-photo-comment .actions,
+.form-photo-comment .button {
+  display: none !important;
+}

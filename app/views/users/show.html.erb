@@ -1,0 +1,25 @@
+<%= render partial: "menu" %>
+
+<div class="ui hidden divider"></div>
+
+<div class="ui container">
+  <div class="column">
+    <div class="ui segment">
+      <h2 class="ui header container-header">Photos</h2>
+
+      <div class="ui list photos">
+      <% @user.photos.each do |photo| %>
+        <div class="item photo">
+          <%= link_to photo.user.username, user_path(photo.user.username) %>
+          <%= time_ago_in_words photo.created_at %> ago<br>
+          <%= image_tag photo.image.url %>
+          <p class="description"><%= photo.description %></p>
+        </div>
+      <% end %>
+      </div>
+
+      <div class="ui hidden divider"></div>
+    </div>
+  </div>
+</div>
+

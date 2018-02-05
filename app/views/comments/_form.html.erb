@@ -1,0 +1,7 @@
+<%= form_with model: [photo, photo.comments.build], html: { class: "ui fluid form form-photo-comment" } do |f| %>
+  <div class="field">
+    <%= f.label :body, "Add comment", class: "hidden" %>
+    <%= f.text_field :body, placeholder: "Comment", rows: 1 %>
+    <%= f.submit "Send", class: "ui blue button" %>
+  </div>
+<% end %>

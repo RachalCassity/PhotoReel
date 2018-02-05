@@ -1,0 +1,12 @@
+<% if target.errors.any? %>
+<div class="ui error message">
+  <div class="header">
+    There were some errors in the form
+  </div>
+  <ul class="list">
+    <% target.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>

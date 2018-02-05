@@ -1,0 +1,27 @@
+ <div class="photo-image">
+  <%= image_tag @photo.image.url %>  	
+</div>
+
+<div class="photo like">
+  <% if @liking %>
+  	<%= button_to "Unlike", unlike_photo_path(@photo), class: "ui blue button", method: :post  %>
+  <% else %>
+    <%= button_to "Like", like_photo_path(@photo), class: "ui blue button", method: :post %>
+  <% end %>
+</div>
+
+ <div class="ui container container-photo-comments">
+      <h3 class="ui header container-header">Comments</h3>
+      <% @photo.comments.each do |comment| %>
+        <div>
+          <strong><%= link_to current_user.username, photo_path(photo.user.id) %></strong>
+          <%= comment.body %> <%= time_ago_in_words comment.created_at %> ago
+        </div>
+      <% end %>
+
+      <h4 class="ui header container-header">Add a comment:</h4>
+      <%= render partial: "comments/form", locals: { photo: @photo } %>
+  </div>
+
+  <div class="ui hidden divider"></div>
+</div>

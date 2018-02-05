@@ -1,0 +1,34 @@
+<div class="ui middle aligned left aligned grid">
+  <div class="column">
+    <h2 class="ui center aligned header">Log in</h2>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "ui form" }) do |f| %>
+      <div class="ui stacked segment">
+        <div class="field">
+          <%= f.label :login %>
+          <%= f.text_field :login, autofocus: true %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password %>
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+          <div class="field">
+            <div class="ui checkbox">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          </div>
+        <% end -%>
+
+        <div class="actions">
+          <%= f.submit "Log in", class: "ui fluid blue submit button" %>
+        </div>
+      </div>
+    <% end %>
+
+    <%= render "users/shared/links" %>
+  </div>
+</div>
