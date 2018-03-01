@@ -6,8 +6,4 @@ class Photo < ApplicationRecord
 
   validates :image, presence: true
   validates :description, presence: true
-
-  scope :of_followed_users, lambda do |following_users|
-    where user_id: following_users
-  end
 end
