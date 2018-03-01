@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+
   def index
     # first we figure out who we're following
     # and get their user ids
@@ -15,6 +16,7 @@ class PhotosController < ApplicationController
                 .per(3)
 
     @recommended_users = User.where.not(id: [current_user.id] + ids_of_the_users_we_are_following)
+    
   end
 
   def new
@@ -29,6 +31,8 @@ class PhotosController < ApplicationController
     else
       render :action => "new"
     end
+
+    statsd.increment("photo.uploads")
   end
 
   def show
