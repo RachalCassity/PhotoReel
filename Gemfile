@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'carrierwave', '~> 1.2'
+gem 'fog'
+gem "fog-aws"
 gem 'mini_magick', '~> 4.3'
 gem 'file_validators'
 gem 'gravatar'

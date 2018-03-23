@@ -31,8 +31,6 @@ class PhotosController < ApplicationController
     else
       render :action => "new"
     end
-
-    statsd.increment("photo.uploads")
   end
 
   def show
