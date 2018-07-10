@@ -21,6 +21,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'kaminari'
 gem 'devise'
 gem 'statsd-ruby'
+gem 'react-rails'
+gem 'therubyracer'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -34,8 +36,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'carrierwave', '~> 1.2'
-gem 'fog'
-gem "fog-aws"
 gem 'mini_magick', '~> 4.3'
 gem 'file_validators'
 gem 'gravatar'

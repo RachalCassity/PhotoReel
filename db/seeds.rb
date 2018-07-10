@@ -18,6 +18,15 @@ User.create!(
   password: "password"
 )
 
+10.times do
+  username = SecureRandom.hex 
+  User.create!(
+    email: "#{username}@example.com",
+    username: username,
+    password: "password"
+  )
+end
+
 User.all.each do |user|
   %w[ruby rails].each do |photo_name|
     Photo.create!(

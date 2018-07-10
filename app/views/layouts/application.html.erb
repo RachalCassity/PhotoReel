@@ -16,8 +16,9 @@
     <div class="ui fixed menu main-menu">
       <div class="ui container">
         <% if user_signed_in? %>
-          <%= link_to "PhotoReel", photos_path, class: "header item" %>
+          <%= link_to "PhotoReel", root_path, class: "header item" %>
           <div class="right menu">
+            <%= link_to "My Photos", user_path(username: current_user.username), class: "item" %>
             <%= link_to "Upload photo", new_photo_path, class: "item" %>
             <%= link_to "Settings", edit_user_registration_path, class: "item" %>
             <%= link_to "Log out", destroy_user_session_path, class: "item", method: :delete %>

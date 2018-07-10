@@ -14,10 +14,14 @@
           <%= time_ago_in_words photo.created_at %> ago<br>
           <%= image_tag photo.image.url %>
           <p class="description"><%= photo.description %></p>
+          <p>
+            <%= link_to 'Delete Photo', photo_path(photo),
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+          </p>
         </div>
       <% end %>
       </div>
-
       <div class="ui hidden divider"></div>
     </div>
   </div>
